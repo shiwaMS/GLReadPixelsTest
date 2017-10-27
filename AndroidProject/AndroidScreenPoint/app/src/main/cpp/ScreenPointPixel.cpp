@@ -28,6 +28,7 @@
 #include <jni.h>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
+#include "log.h"
 //Link lGLESv2 in the CMakeList.txt file
 //LOCAL_LDLIBS += -lGLESv2
 
@@ -100,6 +101,29 @@ int GetScreenPixels(void* buffer, int x, int y, int width, int height) {
         return -2;
     return 0;
 }
+
+
+
+//----------------------------UNITY TEST-----------------------------
+void create_check_texture(unsigned char* arr, int w, int h, int ch)
+{
+    LOGI("arr: %s", arr);
+    int n = 0;
+    for (int i = 0; i < w; ++i) {
+        for (int j = 0; j < h; ++j) {
+            for (int k = 0; k < ch; ++k) {
+                arr[n++] = ( (i + j) % 2 == 0 ) ? 255 : 0;
+            }
+        }
+    }
+}
+
+
+void setTextureId(int textureId){
+    LOGI("textureId: %d", textureId);
+}
+
+//----------------------------UNITY TEST-----------------------------
 
 //----------------------------UNITY RENDERING CALLBACK-----------------------------
 

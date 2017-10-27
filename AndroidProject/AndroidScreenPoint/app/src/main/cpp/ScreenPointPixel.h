@@ -18,6 +18,12 @@ void updateScreenPointPixelBufferPointer(void *buffer);
 void updateScreenPointPixelCoordinate(int x, int y);
 void updateScreenPointPixelSize(int width, int height);
 
+//----------------------------UNITY TEST-----------------------------
+void create_check_texture(unsigned char* arr, int w, int h, int ch);
+void setTextureId(int textureId);
+//----------------------------UNITY TEST-----------------------------
+
+
 int GetScreenPixels(void *buffer, int x, int y, int width, int height);
 #endif
 }
